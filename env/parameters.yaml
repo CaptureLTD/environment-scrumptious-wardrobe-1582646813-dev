@@ -1,0 +1,10 @@
+adminUser:
+  password: vault:scrumptious-wardrobe-1582646813/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: jenkins@capture.co.uk
+  token: vault:scrumptious-wardrobe-1582646813/pipelineUser:token
+  username: captureJenkins
+prow:
+  hmacToken: vault:scrumptious-wardrobe-1582646813/prow:hmacToken

@@ -3,7 +3,7 @@ autoUpdate:
   schedule: ""
 bootConfigURL: https://github.com/CaptureLTD/jenkins-x-boot-config
 cluster:
-  clusterName: ""
+  clusterName: scrumptious-wardrobe-1582646813
   devEnvApprovers:
   - capturematt
   environmentGitOwner: captureLTD
@@ -14,18 +14,20 @@ cluster:
   namespace: jx
   provider: eks
   region: eu-west-1
+  registry: 917980862284.dkr.ecr.eu-west-1.amazonaws.com
   vaultName: jx-vault
   zone: eu-west-1
 environments:
 - ingress:
     domain: aws.capture.limited
     externalDNS: true
-    namespaceSubDomain: -jx-dev.
+    namespaceSubDomain: -jx.
     tls:
       email: aws@capture.co.uk
       enabled: true
-      production: false
+      production: true
   key: dev
+  repository: environment-scrumptious-wardrobe-1582646813-dev
 - ingress:
     domain: aws.capture.limited
     externalDNS: true
@@ -35,6 +37,7 @@ environments:
       enabled: true
       production: false
   key: staging
+  repository: environment-scrumptious-wardrobe-1582646813-staging
 - ingress:
     domain: aws.capture.limited
     externalDNS: true
@@ -45,6 +48,7 @@ environments:
       enabled: true
       production: true
   key: production
+  repository: environment-scrumptious-wardrobe-1582646813-production
 gitops: true
 ingress:
   domain: aws.capture.limited
@@ -60,25 +64,25 @@ secretStorage: vault
 storage:
   backup:
     enabled: true
-    url: ""
+    url: s3://scrumptious-wardrobe-1582646813-backup-1dad1922-03b9-4858-9f31
   logs:
     enabled: true
-    url: ""
+    url: s3://scrumptious-wardrobe-1582646813-logs-aae03826-0a82-4d78-96a1-3e
   reports:
     enabled: true
-    url: ""
+    url: s3://scrumptious-wardrobe-1582646813-reports-ea8f7502-e5f8-49f8-a982
   repository:
     enabled: true
-    url: ""
+    url: s3://scrumptious-wardrobe-1582646813-repository-fe959564-ffc1-45e6-a
 vault:
-  name: jx-vault
   aws:
     autoCreate: true
     iamUserName: jx-vault
+  name: jx-vault
 velero:
   schedule: ""
   ttl: ""
 versionStream:
-  ref: "master"
+  ref: v1.0.359
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: prow
