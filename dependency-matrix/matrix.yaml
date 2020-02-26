@@ -5,3 +5,9 @@ dependencies:
   url: https://github.com/CaptureLTD/php-helloworld-qs2.git
   version: ""
   versionURL: ""
+- host: github.com
+  owner: CaptureLTD
+  repo: python-qs1
+  url: https://github.com/CaptureLTD/python-qs1.git
+  version: ""
+  versionURL: ""
